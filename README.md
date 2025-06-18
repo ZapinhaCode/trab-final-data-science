@@ -1,8 +1,8 @@
 # Tema do projeto 
 Previsão de Temperatura Aparente a partir de Variáveis Climáticas (Análise de Dados Meteorológicos)
 
-## URL do repositório no GitHub 
-(Insira aqui o link do repositório GitHub com o código e documentação do projeto)
+## URL do DataSet utilizado 
+https://www.kaggle.com/datasets/muthuj7/weather-dataset?resource=download
 
 ## Dataset utilizado 
 - **Origem:** Dataset de histórico do tempo para Szeged, Hungria (2006-2016), disponível no Kaggle.  
