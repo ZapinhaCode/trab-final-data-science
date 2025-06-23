@@ -1,25 +1,21 @@
 import pandas as pd
 
-# Leitura dos dados
-df = pd.read_csv('weatherHistory.csv')
+def limpar_dados(input_path='Data/weatherHistory.csv', output_path='Data/weatherHistory_clean.csv'):
+    df = pd.read_csv(input_path)
 
-# Visão geral das primeiras linhas (amostra dos dados)
-print(df.head(5))  # Exibe as primeiras 5 linhas do dataset
+    cols_remover = ['Loud Cover', 'Daily Summary']
+    df.drop(columns=[c for c in cols_remover if c in df.columns], inplace=True)
 
-# Remover coluna irrelevante (Loud Cover) e Daily Summary que não será usada
-df.drop(['Loud Cover', 'Daily Summary'], axis=1, inplace=True)
+    if 'Precip Type' in df.columns:
+        df['Precip Type'] = df['Precip Type'].fillna('none')  # corrigido aqui
 
-# Tratar valores ausentes em 'Precip Type': substituir NaN por 'none'
-df['Precip Type'].fillna('none', inplace=True)
+    df.drop_duplicates(inplace=True)
 
-# Remover linhas duplicadas completas, se houver
-df.drop_duplicates(inplace=True)
+    df['Formatted Date'] = pd.to_datetime(df['Formatted Date'], errors='coerce', utc=True)
+    df.dropna(subset=['Formatted Date'], inplace=True)
 
-# Conversão da coluna de data para datetime
-df['Formatted Date'] = pd.to_datetime(df['Formatted Date'])
+    df.to_csv(output_path, index=False)
+    print(f"✅ Dados limpos salvos em: {output_path}")
 
-# Conferir resultado da limpeza
-print("Dados após limpeza:")
-print(f"Total de registros: {len(df)}")
-print("Valores nulos por coluna:")
-print(df.isnull().sum())
+if __name__ == "__main__":
+    limpar_dados()
