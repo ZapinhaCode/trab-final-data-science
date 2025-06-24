@@ -1,6 +1,6 @@
 # Previsão de Temperatura Aparente 🌡️
 
-Repositório do Projeto de Data Science do curso CCC269 – UPF, orientado pelo Prof. Dr. Carlos Amaral Hölbig ([holbig@upf.br](mailto:holbig@upf.br)). Este projeto tem como objetivo prever a **Temperatura Aparente** (feels-like) utilizando dados climáticos históricos de Szeged, Hungria (2006–2016).
+Repositório do Projeto de Data Science, orientado pelo Prof. Carlos Amaral Hölbig ([holbig@upf.br](mailto:holbig@upf.br)). Este projeto tem como objetivo prever a **Temperatura Aparente** (feels-like) utilizando dados climáticos históricos de Szeged, Hungria (2006–2016).
 
 ---
 
